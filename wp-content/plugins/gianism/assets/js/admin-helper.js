@@ -1,0 +1,2 @@
+jQuery(document).ready(function(n){"use strict";n(".gianism-wrap").find("h3,caption").each(function(i,e){n(e).attr("id","index_"+i),n("#index-list").append('<li><a href="#index_'+i+'">'+n(e).text()+"</a></li>")}),n(".gianism-admin-notice").click(function(i){i.preventDefault();var e=n(this);n.get(e.attr("data-endpoint")).done(function(n){n.success?e.parents("div.error").remove():window.alert("Error")}).fail(function(n){window.alert(n.responseJSON.data)})})});
+//# sourceMappingURL=map/admin-helper.js.map

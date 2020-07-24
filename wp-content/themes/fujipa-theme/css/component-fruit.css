@@ -1,0 +1,89 @@
+.mediabox {
+	margin-top:30px;
+	float: left;
+	width: 50%;
+	padding: 0 25px;
+}
+
+.mediabox .howto {
+	margin-left: auto;
+	margin-right: auto;
+	padding:0.5em;
+}
+
+
+/* Example media queries */
+
+@media screen and (max-width: 52.375em) {
+.tabs nav a span {
+	display: none;
+}
+
+.tabs nav a:before {
+	margin-right: 0;
+}
+
+.mediabox {
+	float: left;
+	width: 100%;
+	padding: 10px;
+}
+
+.mediabox h3 {
+	margin-top: 0;
+}
+
+.mediabox:before,
+.mediabox:after {
+	content: '';
+	display: table;
+}
+
+.mediabox:after {
+	clear: both;
+}
+
+
+#yoyaku {
+	padding-top:30px;
+	margin-bottom:50px;
+}
+
+
+#yoyaku table {
+	border: 0.5px #666666 solid;
+}
+}
+
+@media screen and (max-width: 32em) {
+.tabs nav ul,
+.tabs nav ul li a {
+	width: 100%;
+	padding: 0;
+}
+
+.tabs nav ul li {
+	width: 20%;
+	width: calc(20% + 1px);
+	margin: 0 0 0 -1px;
+}
+
+.tabs nav ul li:last-child {
+	border-right: none;
+}
+
+.mediabox {
+	float: left;
+	width: 100%;
+	padding:5px;
+}
+
+.mediabox img {
+	float: none;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+
+	
+}

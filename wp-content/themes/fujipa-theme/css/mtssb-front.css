@@ -1,0 +1,1044 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* ★☆----------------　改行設定まとめ   
+
+PCとスマホで改行変化(下記すべてで一つの設定)-------------------
+.pc_kaigyo_up      PCの時　改行    
+.pc_kaigyo_non   PCの時　消える改行
+.sumaho_kaigyo_up スマホの時　改行  
+.sumaho_kaigyo_non 　スマホの時　消える改行   
+<br class="pc_kaigyo_up sumaho_kaigyo_non sumaho_kaigyo_up">
+--------------------------------------
+スマホの時だけ　改行させる(PC変化なし)-----------------------------
+.sumaho_dake_kaigyo
+<br class="sumaho_dake_kaigyo">
+--------------------------------------
+  --------------★☆*/
+
+
+
+/*　スマホの時　改行 */
+  .sumaho_kaigyo_up{
+    display: none;
+  }
+
+/*　PCの時　改行 */
+  .pc_kaigyo_up{
+    display: inline;
+  }
+
+
+@media screen and (max-width: 1100px) {
+/*　スマホの時　消える改行 */
+  .sumaho_kaigyo_non{
+    display: none;
+  }
+/*　PCの時　改行 */
+  .pc_kaigyo_up{
+    display: none;
+  }
+  
+/*　スマホの時　改行 */
+      .sumaho_kaigyo_up{
+    display: none;
+  }
+
+
+}
+
+
+@media screen and (max-width: 800px) {
+/*　スマホの時　改行 */
+    .sumaho_kaigyo_up{
+    display: inline;
+  }
+
+}
+
+
+
+
+/*　スマホの時だけ改行 */
+.sumaho_dake_kaigyo{
+    display: none;
+}
+@media screen and (max-width: 1000px) {
+/*　スマホの時　改行 */
+.sumaho_dake_kaigyo{
+    display: inline;
+  }
+
+}
+
+/* ★☆----------------　改行設定まとめ --------------★☆*/
+
+
+
+
+
+/* 月間予約カレンダー、複合カレンダー、時間割カレンダー、リストカレンダー、ミックスカレンダー、月リストカレンダー */
+.list-monthly-calendar,
+.mix-calendar,
+.list-calendar,
+.timetbale-calendar,
+.multiple-calendar,
+.monthly-calendar {
+	clear: both;
+	font-family: sans-serif;
+	/* カレンダー 下部のマージンを調整 2018.11.04 kazuya.okamoto */
+    /*	margin-bottom: 1.5rem; */
+	margin-bottom: 4.0rem;
+}
+
+.list-calendar h3,
+.timetable-calendar h3,
+.multiple-calendar h3,
+.monthly-calendar h3 {
+	font-size: 2.0rem;
+	/* カレンダー表示マージン修正 2018.11.18 kazuya.okamoto */
+	/* margin: 0.5rem 0; */
+	margin: 1.0rem 0;
+}
+
+.list-monthly-calendar table,
+.mix-calendar table,
+.timetable-calendar table,
+.multiple-calendar table,
+.monthly-calendar table {
+	/* 60%へ修正 2018.11.18 kazuya.okamoto */
+	width: 60%;
+		background-color:#FFF;
+}
+
+
+
+.calendar-caption {
+	font-size: 1.2rem;
+	text-align: center;
+    color: black;
+    font-weight: bold;
+	/* 2018.11.18 kazuya.okamoto */
+	margin-bottom: 1rem;
+}
+
+.mix-calendar th, .mix-calendar td,
+.timetable-calendar th, .timetable-calendar td,
+.multiple-calendar th, .multiple-calendar td,
+.monthly-calendar th, .monthly-calendar td {
+	text-align: center;
+	width: 14%;
+	/* カレンダーの表に罫線を入れる 2018.11.10 kazuya.okamoto */
+	border-collapse: collapse;
+	border: 1px solid silver;
+}
+
+.mix-calendar th,
+.timetable-calendar th,
+.multiple-calendar th,
+.monthly-calendar th {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.list-calendar table {
+	width: auto;
+}
+
+.list-monthly-calendar th, .list-monthly-calendar td,
+.list-calendar th, .list-calendar td {
+		/* 線の色変更 2019.12.18 sugiura #dddddd→#000000　*/
+	border: 1px solid #000000;
+	text-align: center;
+}
+
+.list-monthly-calendar th,
+.list-calendar th {
+	font-size: 1.1em;
+	padding: 0.6em 1em;
+}
+
+.list-monthly-calendar td,
+.list-calendar td {
+	text-align: center;
+	font-size: 1.1em;
+	padding: 0.6em;
+}
+
+.list-header.sun,
+.mix-calendar .header-row .sun,
+.week-title.sun,
+.day-box.sun .day-number {
+	color: #ff1a1a;
+}
+
+.list-header.sat,
+.mix-calendar .header-row .sat,
+.week-title.sat,
+.day-box.sat .day-number {
+	color: #2e0bff;
+}
+
+.list-header.holiday,
+.list-box.holiday,
+.day-box.holiday .day-number {
+	color: #ff6347;
+}
+
+caption.holiday, caption.sun {
+    color: #ff6347;
+}
+
+caption.sat {
+    color: #4169e1;
+}
+
+.mix-calendar td,
+.multiple-calendar td,
+.monthly-calendar td {
+	padding: 6px 0;
+}
+
+.day-box.no-day {
+	background-color: transparent;
+}
+
+.day-box.today {
+	background-color: #ffffe0;
+}
+
+.monthly-prev-next {
+	font-size: 1.0rem;
+	/* 2018.11.18 kazuya.okamoto */
+    width:60%;
+	/* 2018.11.18 kazuya.okamoto */
+	margin: 1rem;
+}
+
+.monthly-prev {
+	float: left;
+}
+
+.monthly-next {
+	float: right;
+}
+
+.calendar-time-mark,
+.calendar-mark {
+	color: #888888;
+	font-size: 1.4rem;
+}
+
+.calendar-mark .article-name {
+	font-family: sans-serif;
+}
+
+.calendar-time-disable {
+	color: #888888;
+	font-size: 1.4rem;
+}
+
+.calendar-time-mark {
+	line-height: 1.5rem;
+}
+
+.calendar-time-mark .time-string {
+	font-size: 0.8rem;
+}
+
+.calendar-mark .article-name {
+	font-size: 0.8rem;
+}
+
+
+/* ウィジェットのミックスカレンダー */
+.mix-widget-calendar table {
+    margin: 1em;
+    width: 90%;
+}
+
+.mix-widget-calendar .monthly-prev-next {
+    margin: 1em;
+    width: 90%;
+}
+
+.mix-widget-calendar caption {
+    text-align: center;
+}
+
+.mix-widget-calendar th, .mix-widget-calendar td {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 0.2em;
+    text-align: center;
+    width: 14%;
+}
+
+.mix-widget-calendar .day-number {
+    margin: 0.5em 0 0.2em;
+}
+
+.mix-widget-calendar .header-row .sun {
+    color: #ff6347;
+}
+
+.mix-widget-calendar .header-row .sat {
+    color: #4169e1;
+}
+
+.mix-widget-calendar .schedule-note {
+    font-size: 0.5em;
+}
+
+/* 指定日予約状況表示 */
+.day-calendar {
+	font-family: sans-serif;
+	/* DAYカレンダー の下部マージンを調整 2018.11.10 kazuya.okamoto */
+	/* margin-bottom: 1.5rem; */
+	margin-bottom: 4.0rem;
+}
+
+.day-calendar h3 {
+	font-size: 1.1rem;
+	margin: 10px 0;
+}
+
+.day-calendar table {
+	border: none;
+	border-collapse: separate;
+	border-spacing: 1px 5px;
+	/* DAYカレンダー の幅を調整 2018.11.10 kazuya.okamoto */
+	/* width: 80%; */
+	width: 50%;
+}
+
+.day-calendar th,
+.day-calendar td {
+	font-size: 1rem;
+	text-align: center;
+	padding: 0;
+	vertical-align: middle;
+	width: 50%;
+}
+
+th.day-left {
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border: 1px solid #dddddd;
+	line-height: 2.5rem;
+}
+
+th.day-right {
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 1px solid #dddddd;
+}
+
+td.day-right {
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 1px solid #dddddd;
+	font-size: 1.5rem;
+}
+
+a.booking-timelink {
+	display: block;
+}
+
+/* ミックスカレンダーデイリー */
+.day-mix-calendar {
+    font-family: sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+.day-mix-calendar table {
+    /* width: 98%; */
+    /* 幅変更 2020.03.20 kazuya.okamoto */
+	width: 50%;
+}
+
+.day-mix-calendar .article-name {
+    width: 20%;
+}
+
+.day-mix-calendar .schedule-note {
+    width: 15%;
+}
+
+.day-mix-calendar th, .day-mix-calendar td {
+    border: 1px solid #dddddd;
+    font-size: 1rem;
+    text-align: center;
+/*    padding: 0; */
+    vertical-align: middle;
+}
+
+.mix-dayrow.space-line {
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    height: 1rem;
+}
+
+
+
+
+
+/* 時間割選択 外側デザイン追加 2020.02 sugiura */
+.mtssb-timetable-form {
+    margin: 1em 0;
+background:#FFF;
+	max-width:400px;
+	padding:20px 0;
+	
+
+ border: 1px solid #ccc; /* 枠線 */
+ background-color: #fff; /* 背景色 */
+ box-shadow: 1px 1px 2px #ccc;
+	
+	
+ position: relative;
+ z-index: 0;
+}
+
+
+/* 時間割選択 の白枠 2020.02 sugiura */
+.mtssb-timetable-form :before{
+ border: 2px dotted #ffb6ce; /* 白い実線 */
+ border-radius: 5px;
+ content: '';
+ display: block;
+ position: absolute;
+ top: 0px;
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
+ margin: 4px;
+ z-index: -1;
+}
+
+
+/* 時間割選択 プルダウン設定 2020.02 sugiura */
+.timetable-select {
+	margin-right: 0.5em;
+	vertical-align: middle;
+	font-size:20px;/* 旧　font-size: 1.2em; */
+padding:6px;/* 旧　padding: 2px; */
+}
+
+.select-timetable input {
+	padding: 0.1em 0.5em;
+	font-size: 0.9em;
+
+}
+
+/* 「予約する」ボタンデザイン追加 2020.02 sugiura */
+.timetable-submit{
+	font-size:18px;
+	padding:5px;
+}
+
+/* 時間割選択 一番上の文字デザイン追加 2020.02 sugiura */
+.mtssb-timetable-name{
+	font-size:20px;
+	font-weight:bold;
+	color:#FFF;
+	max-width:300px;
+
+ background-color: #ff6e9e;  /* 背景色 */
+ border-radius: 5px;
+ padding: 10px;  /* 内側の余白 */
+ position: relative;
+ z-index: 0;
+	margin-top:-30px;
+	margin-bottom:10px;
+}
+.mtssb-timetable-name:before{
+ border: 1px solid #fff; /* 白い実線 */
+ border-radius: 5px;
+ content: '';
+ display: block;
+ position: absolute;
+ top: 0px;
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
+ margin: 4px;
+ z-index: -1;
+}
+
+
+
+/* 時間割選択 二番上の文字デザイン追加 2020.02 sugiura */
+.mtssb-timetable-date{
+		font-size:20px;
+	font-weight:bold;
+	color:#ff4d88;
+	margin-top:10px;
+		margin-bottom:10px;
+	border-bottom:1px dashed #ff4d88;
+	width:80%;
+}
+
+/* 予約フォーム */
+.content-form {
+	/* 予約フォームの下部マージンを調整 2018.11.10 kazuya.okamoto */
+	/* margin-bottom: 1rem; */
+	margin-bottom: 4rem;
+	/* 予約フォームの幅を調整 2018.11.10 kazuya.okamoto width: 90%;*/
+	max-width: 800px;/* 修正 2020 02 sugiura */
+		background:#FFF;
+	font-size:18px;
+}
+
+.content-form .form-message {
+	background-color: #ffffe0;
+	border: 1px solid #e6db55;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	width: 99%;
+
+
+}
+
+.content-form .form-message.error {
+	background-color: #ffebe8;
+	border: 1px solid #f08080;
+
+}
+
+.content-form fieldset {
+	border: 1px solid #dddddd;
+	padding: 10px 0 0 10px;
+	margin: 0 0 1.5rem 0;
+	width: 98%;
+}
+
+/* 予約フォーム　タイトル文字 */
+.content-form legend {
+	
+	font-weight: bold;
+	padding: 0 5px;
+		font-size:22px;/* 旧　font-size: 1.1rem;　*/
+}
+
+.content-form table {
+	border: none;
+	border-collapse: separate;
+	border-spacing: 5px;
+	margin: 0 0 5px 0;
+	width: 99%;
+}
+
+.content-form th,
+.content-form td {
+	border-top: none;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	border-left: none;
+	padding: 2px;
+	vertical-align: middle;
+	font-size:22px;
+}
+
+.content-form th {
+	
+	line-height: 2.2rem;
+	padding-right: 10px;
+	text-align: right;
+	vertical-align: top;
+	width: 30%;
+		font-size:18px;/* 旧　font-size: 1rem;　*/
+}
+
+.content-form td {
+	
+	font-size:18px;/* 旧　font-size: 0.9rem;　*/
+}
+
+.content-form th label {
+	
+	font-size:18px;/* 追加 2020 02 sugiura */
+}
+
+
+.input-number {
+	
+	font-size:18px;/* 追加 2020 02 sugiura */
+}
+
+.content-form input,
+.content-form textarea {
+	padding: 3px;
+	margin-bottom: 3px;
+	
+	font-size:18px;/* 旧　font-size: 1rem;　*/
+	
+}
+
+.content-form button {
+	/* 予約フォーム 「予約確認」ボタンの大きさ調整と下部にマージン追加 2018.11.10 kazuya.okamoto */
+	/* padding: 3px 7px; */
+	padding: 2px 4px;
+	margin-bottom: 0.5rem;
+}
+
+.content-text.small {
+	width: 3rem;
+}
+
+.content-text.small-medium {
+    width: 25%;
+}
+
+.content-text.medium {
+	width: 48%;
+}
+
+.content-text.fat {
+	width: 95%;
+}
+
+.input-number {
+	float: left;
+	margin-right: 1rem;
+	text-align: center;
+}
+
+input.right {
+	text-align: right;
+}
+
+.content-form .error-message {
+	clear: both;
+	color: red;
+}
+
+.content-form .required {
+	color: red;
+}
+
+.content-form .unit-price {
+	clear: both;
+
+}
+
+.content-form .booking-seimei {
+	display: inline-block;
+	text-align: center;
+	width: 3rem;
+}
+
+/* 予約フォーム料金表 */
+.bill-details td {
+	padding-right: 0.5rem;
+}
+
+.bill-details td.bill-number {
+	text-align: center;
+}
+
+.bill-details td.bill-unit,
+.bill-details td.bill-cost {
+	text-align: right;
+}
+
+.bill-total, .bill-tax {
+	padding-right: 1.5rem;
+	text-align: right;
+}
+
+/* 予約フォーム　同意書　送信ボタン */
+#terms-conditions,
+#accedence-box,
+#button-message {
+	margin: 1rem 0;
+}
+
+#action-button {
+	position: relative;
+	text-align: center;
+}
+
+#action-button-cover {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #ffffff;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+}
+
+
+/* 予約フォーム オプション表示項目 */
+.content-form input.booking-option-number {
+	text-align: right;
+	width: 3rem;
+}
+
+.content-form label.field-item {
+	margin-right: 0.4rem;
+}
+
+.content-form label.field-item input {
+	margin-right: 0.15rem;
+}
+
+.content-form select {
+	font-size: 1rem;
+	padding: 0.1rem 0.15rem;
+}
+
+/* 予約確認 キャンセル */
+th.subscription-header {
+	text-align: left;
+}
+
+.subscription-title {
+	font-size: 1.2rem;
+}
+
+.subscription-cancel {
+	display: block;
+	float: right;
+}
+
+/* 予約履歴表示ユーザーズページ */
+.mtssb-pagination {
+    margin-bottom: 1em;
+}
+
+/* フロントエンドユーザー登録 */
+.content-form .user-name {
+    display: inline-block;
+    text-align: center;
+    width: 2.5em;
+}
+
+.content-form dl {
+    margin: 0;
+}
+
+.content-form dd {
+    margin-bottom: 0.4em;
+}
+
+/* セレクトボックスの修正
+   added by kazuya.okamoto
+   2019.11.02                */
+
+.cp_ipselect {
+	overflow: hidden;
+	/* width: 50%; */
+	width:100%;
+	max-width: 450px;/* width: 300px; */
+	margin: 2em auto;
+	text-align: center;
+}
+.cp_ipselect select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+			font-size:18px;/* 追加 */
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl03 {
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid #ff5151;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl03::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #ff69cc;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl03 select {
+	padding: 8px 38px 8px 8px;
+	color: #ff5151;
+}
+
+/* ボタンの修正
+   added by kazuya.okamoto
+   2019.11.02                */
+
+.btn-top-radius {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #ff5252;
+  background: #ffdae4;
+  border-bottom: solid 4px #ff5252;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.btn-top-radius:hover {
+  background: #ff6590;
+  color: #FFF;
+}
+
+/* ボタンを横に並べる [前に戻る] [次へ進む] など
+   added by kazuya.okamoto
+   2019.11.04                */
+
+.inline-block_test {
+    display: inline-block;             /* インラインブロック要素にする */
+    background-color:  transparent;    /* 背景色指定 */
+    padding:  10px;                    /* 余白指定 */
+    height: 80px;                      /* 高さ指定 */
+}
+
+
+
+
+
+
+/* [前に戻る] [次へ進む] の  クリック後の青枠削除
+   added by sugiura   2019.12.18   */
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
+  outline: 0;
+  box-shadow: none;
+  border: 2px solid #ff907a;
+border-bottom: 5px solid #ff907a;
+}
+
+/* ◯✕マーク　大きさ変更
+ added by sugiura    2019.12.18       
+◯✕マークだけでなくテーブル全体の画像設定になっているので注意  */
+tbody img{
+	width:36px;
+}
+/* 休日背景色
+ added by sugiura    2019.12.18
+tbody td:nth-child(3){
+	background-color:#fff3f3;
+}
+*/
+
+/* テーブル ヘッダータイトル背景色変更
+   added by sugiura   2019.12.18
+thead tr th:nth-child(2){
+	color: #FFF;
+	background-color:#ff80db;
+	font-size:20px;
+		
+}
+thead tr th:nth-child(3){
+	color: #FFF;
+	background-color:#ff3131;
+	font-size:20px;
+
+}
+*/
+
+/* テーブルの文字色（休日以外）
+   added by sugiura   2019.12.18
+.list-header{
+	color: #000000;	
+}
+*/
+
+/* 祝日の名前の色
+   added by sugiura   2019.12.18
+.schedule-note{
+	color:#000000;
+	width:50%;
+	border-bottom:3px dotted #ff5f4a;
+	margin:0 auto;
+
+}
+*/
+
+/* 祝日の名前の前の記号
+   added by sugiura   2019.12.18
+.schedule-note:before {
+content: "【"
+	
+}
+*/
+
+/* 祝日の名前の後ろの記号
+   added by sugiura   2019.12.18
+.schedule-note:after {
+content: "】"
+}
+*/
+
+/* ～1100pxまでの設定
+   added by sugiura   2019.12.18
+@media screen and (min-width: 1110px) {
+*/
+
+	/* 祝日の名前の前の記号
+   added by sugiura   2019.12.18
+.schedule-note:before {
+content: "\02666【"
+	
+}
+*/
+
+/* 祝日の名前の後ろの記号
+   added by sugiura   2019.12.18
+.schedule-note:after {
+content: "】\02666"
+}
+}
+*/
+
+
+/* 予約不可マーク調整
+   added by sugiura   2019.12.18
+.disable{
+	font-weight:bold;
+}
+*/
+
+
+
+
+
+/* テーブルタイトル追従(IE非対応)まとめ　↓*/ 
+
+/* テーブルタイトル追従(IE非対応)
+   added by sugiura   2019.12.18  
+thead th {
+ */ 
+/* 縦スクロール時に固定する
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3%;
+ */ 
+
+/* tbody内のセルより手前に表示する
+  z-index: 1;
+}
+
+
+ */
+/* 翻訳時　テーブルタイトル追従(IE非対応)
+   added by sugiura   2019.12.18  
+.translated-ltr thead th{
+ */	  
+/* 縦スクロール時に固定する
+  position: -webkit-sticky;
+  position: sticky;
+  top: 7%; 
+	*/
+  /* tbody内のセルより手前に表示する 
+  z-index: 1;
+}
+	
+	*/
+/* テーブル白部分追従(IE非対応)
+   added by sugiura   2019.12.18  
+.article-name{
+	background-color:#FFFFFF;
+}
+ */
+
+/* テーブルタイトル追従(IE非対応)まとめ　↑*/ 
+
+
+
+
+
+
+/* ブラウザ1300pxからの幅設定
+   added by sugiura   2019.12.18   */
+@media screen and (max-width: 1300px) {
+	.list-monthly-calendar table,
+.mix-calendar table,
+.timetable-calendar table,
+.multiple-calendar table,
+.monthly-calendar table {
+	width: 90%;
+		background-color:#FFF;
+}
+}
+/* ブラウザ1100pxからの幅設定
+   added by sugiura   2019.12.18   */
+@media screen and (max-width: 1100px) {
+	.list-monthly-calendar table,
+.mix-calendar table,
+.timetable-calendar table,
+.multiple-calendar table,
+.monthly-calendar table {
+	width: 80%;
+		background-color:#FFF;
+}
+}
+/* ブラウザ800pxからの幅設定
+   added by sugiura   2019.12.18   */
+@media screen and (max-width: 800px) {
+	.list-monthly-calendar table,
+.mix-calendar table,
+.timetable-calendar table,
+.multiple-calendar table,
+.monthly-calendar table {
+	width: 100%;
+		background-color:#FFF;
+}
+}
+
+
+/* 注意事項記入するボックス
+   added by kazuya.okamoto
+   2019.11.02                */
+.notice-comment-box {
+  color: #f97f05;
+ font-size: 17px; /* 旧 font-size: 11px; */
+	line-height:1.6;/* 追加 2020 02 sugiura */
+	
+}
+
+.notice-comment-box ul, ol {
+  /*background: #ffffff;*/
+  /*border-radius :8px;*/
+  /* box-shadow :0px 0px 1px silver; */
+  padding: 0.2em 0.2em 0.2em 1.5em;
+}
+
+.notice-comment-box ul li, ol li {
+  line-height: 1.0;
+  padding: 0.2em 0;
+}
+
+
+
+
+
+

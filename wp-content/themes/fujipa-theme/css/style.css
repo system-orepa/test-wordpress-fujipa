@@ -1,0 +1,522 @@
+@charset "utf-8";
+
+
+
+/*PC・タブレット・スマホ共通設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*コンテナー（ホームページ全体を囲むブロック）
+---------------------------------------------------------------------------*/
+#container {overflow-x: hidden;}
+
+
+
+/*コンテンツ
+---------------------------------------------------------------------------*/
+.contents {
+	clear: both;
+	max-width: 1200px;	/*最大幅。#header、#menubar、#pagetopと数字を合わせる*/
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 40px 0;
+}
+/*h2タグ*/
+.contents h2 {
+	clear: both;
+	margin-bottom: 15px;
+	padding: 8px 20px;	/*上下、左右への余白*/
+	background: #dd6e02;	/*背景色（古いブラウザ用）*/
+	color: #fff;	/*文字色*/
+	border-radius: 10px;	/*角丸のサイズ*/
+}
+/*h3タグ*/
+.contents h3 {
+	clear: both;
+	margin-bottom: 15px;
+	padding: 6px 20px;	/*上下、左右への余白*/
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
+	border-radius: 10px;		/*角丸のサイズ*/
+}
+/*h3タグのタイプ違い（MENUページのh3見出しに使用）*/
+.contents h3.type2 {
+	border: none;
+	background: #333;	/*背景色*/
+	color: #fff;		/*文字色*/
+}
+/*見出しのタイプ違い設定（トップページの挨拶で使っている大きな見出し）*/
+.type1 {
+	background: none !important;
+	border-radius: 0 !important;
+	color: #dd6e02 !important;
+	line-height: 1.3 !important;
+	font-weight: normal !important;
+	font-size: 50px !important;
+	text-align: center !important;
+	border: none !important;
+	border-bottom: 1px dashed #dd6e02 !important;
+	margin-bottom: 20px !important;
+	letter-spacing: 0.2em !important;
+	text-shadow: 8px 8px #eee !important;
+}
+/*段落タグ*/
+.contents p {
+	padding: 0px 20px 15px;	/*上、左右、下への余白*/
+}
+.contents h2 + p,
+.contents h3 + p {
+	margin-top: -5px;
+}
+
+/*メインコンテンツ
+---------------------------------------------------------------------------*/
+/*メインコンテンツブロック*/
+.main {
+	float: right;	/*右に回り込み*/
+	width: 75%;		/*ボックス幅*/
+}
+
+/*サブコンテンツ
+---------------------------------------------------------------------------*/
+.sub {
+	float: left;	/*左に回り込み*/
+	width: 20%;	/*幅*/
+}
+/*subコンテンツ内のh2タグ設定*/
+.sub h2 {
+	padding-bottom: 10px;
+	background: none;
+	padding: 0;
+	color: #666;
+}
+/*subコンテンツのh2タグの１文字目への設定*/
+.sub h2::first-letter {
+	border-left: 3px solid #b5b5b5;	/*左側のアクセント用ラインの幅、線種、色*/
+	padding-left: 10px;
+}
+
+/*サブコンテンツ内のメニュー
+---------------------------------------------------------------------------*/
+/*メニュー全体の設定*/
+.sub ul.submenu {
+	margin-bottom: 15px;	/*メニューブロックの下に空けるスペース*/
+	border-top: solid 1px #e4e4e4;	/*上の線の線種、幅、色*/
+}
+/*メニュー１個ごとの設定*/
+.sub ul.submenu li {
+	background: #fff;	/*背景色*/
+	border-bottom: solid 1px #e4e4e4;	/*下の線の線種、幅、色*/
+}
+.sub ul.submenu li a {
+	text-decoration: none;
+	display: block;
+	padding: 2px 10px;	/*メニュー内の余白。上下、左右への設定。*/
+}
+
+/*サブコンテンツ内のbox1
+---------------------------------------------------------------------------*/
+.sub .box1 {
+	padding: 20px;			/*ボックス内の余白*/
+	margin-bottom: 15px;	/*ボックスの下に空けるスペース*/
+	background: #f7f7f7;	/*背景色*/
+	border: solid 1px #e4e4e4;	/*線の線種、幅、色*/
+	border-radius: 10px;	/*角丸のサイズ*/
+}
+/*box1内のメニューの設定*/
+.sub .box1 ul.submenu {
+	margin-bottom: 0px;
+}
+
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl{
+	padding-left: 15px;
+	margin-bottom: 15px;
+	height: 110px;	/*高さ*/
+	overflow: auto;	/*高さの設定を超えるとスクロールが自動で出る設定。全部表示させていたいならこの行と上の行を削除。*/
+}
+/*日付設定*/
+#new dt {
+	font-weight: bold;	/*太字にする設定。標準がいいならこの行削除。*/
+	float: left;
+	width: 8em;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 8em;
+}
+
+/*GALLERYページ
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list {
+	width: 17.5%;	/*ボックスの幅*/
+	text-align: center;	/*内容をセンタリング*/
+	float: left;
+	margin: 0 0 15px 2%;	/*上、右、下、左へのボックスの外側へとるスペース*/
+	font-size: 12px;
+}
+/*画像の設定*/
+.list figure img {
+	border-radius: 50%;	/*角丸のサイズ。配置画像が正方形であれば円形になります。*/
+}
+
+/*COUPONページ
+---------------------------------------------------------------------------*/
+/*ボックス*/
+#coupon {
+	position: relative;
+}
+/*段落タグ*/
+#coupon p {
+	position: absolute;
+	left: 5%;	/*ボックスに対して左から5%の場所に配置*/
+	top: 35%;	/*ボックスに対して上から35%の場所に配置*/
+	width: 45%;	/*ボックスの幅*/
+	color: #fff;	/*文字色*/
+	text-shadow: 0px 0px 10px #000;	/*テキストの影*/
+}
+
+/*テーブル ta1
+---------------------------------------------------------------------------*/
+/*ta1設定*/
+.ta1 {
+	width: 96%;
+	margin: 0 2% 15px;
+}
+.ta1, .ta1 td, .ta1 th {
+	border: 1px solid #ccc;	/*テーブルの枠線の幅、線種、色*/
+	padding: 10px;	/*ボックス内の余白*/
+	word-break: break-all;
+}
+/*テーブル１行目に入った見出し部分*/
+.ta1 th.tamidashi {
+	width: auto;
+	text-align: left;		/*左よせ*/
+	background: #eee;	/*背景色*/
+}
+/*ta1の左側ボックス*/
+.ta1 th {
+	width: 140px;	/*幅*/
+	text-align: center;	/*センタリング*/
+}
+/*左側ボックスに画像を入れた場合の設定*/
+.ta1 th img {
+	width: 100%;
+}
+
+/*テーブル ta2
+---------------------------------------------------------------------------*/
+/*ta2設定*/
+.ta2 {
+	width: 96%;
+	margin: 0 2% 15px;
+	border-top: 1px dashed #ccc;	/*上の線の幅、線種、色*/
+}
+.ta2 tr:nth-child(odd) {
+	background: #f7f6f3;	/*奇数番目の行にだけ色をつける。古いブラウザは未対応。*/
+}
+.ta2 td,
+.ta2 th {
+	padding: 10px;	/*ボックス内の余白*/
+	border-bottom: 1px dashed #ccc;	/*下の線の幅、線種、色*/
+}
+/*一番左の列の設定。メニュータイトルが入っている所。*/
+.ta2 th {
+	width: 200px;	/*幅*/
+	text-align: left;	/*左寄せ*/
+	vertical-align: top;	/*文字を上に寄せる*/
+}
+/*写真用*/
+.ta2 img.menu-img {
+	width: 150px;	/*画像の幅*/
+	border-radius: 20px;	/*角丸のサイズ。この行を削除すれば通常の四角形になります。*/
+	float: right;
+}
+/*価格用*/
+.ta2 .price {
+	white-space: nowrap;	/*途中で改行させない設定*/
+	font-weight: bold;		/*太字*/
+	text-align: right;		/*右寄せ*/
+}
+
+/*MENUページのページ内メニュー
+---------------------------------------------------------------------------*/
+ul.navmenu {
+	padding-top: 10px;
+	text-align: center;
+}
+ul.navmenu li {
+	display: inline;
+}
+ul.navmenu li a {
+	background: url(../images/arrow1.png) no-repeat left center;	/*矢印マークの設定*/
+	padding-right: 15px;
+	padding-left: 15px;
+	text-decoration: none;
+}
+ul.navmenu li a:hover {
+	background: url(../images/arrow1.png) no-repeat 2px center;	/*マウスオン時に矢印マークを2pxだけ移動させて表示する設定*/
+}
+
+/*一覧ページのボックスのマーク
+（CMSの場合は管理ページの「オプション1」～のプルダウンと、setup.phpの「オプション選択肢」に関連します）
+---------------------------------------------------------------------------*/
+.option1 {
+	font-size: 10px;
+	color: #FFF;
+	background: #F00;
+	text-align: center;
+	display: block;
+	width: 100px;
+}
+.option2 {
+	font-size: 10px;
+	color: #FFF;
+	background: #069;
+	text-align: center;
+	display: block;
+	width: 100px;
+}
+
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 10px;	/*文字サイズ*/
+	padding: 0px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.look {color:#fff;background: #666;padding:5px;border-radius: 4px;}
+.mb15,.mb1em {margin-bottom: 15px;}
+.p3p {padding: 3%;}
+.pt70 {padding-top: 70px;}
+.clear {clear: both;}
+ul.disc {padding: 0em 25px 1em;list-style: disc;}
+.color1 {color: #dd6e02 !important;}
+.color2 {color: #1C00EF;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.w30p {width: 30% !important;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+.fr {float: right;margin-left: 1%;margin-bottom: 15px;width: 45%;}
+.fl {float: left;margin-right: 1%;margin-bottom: 15px;width: 45%;}
+.big1 {font-size: 30px;letter-spacing: 0.2em;}
+.mini1 {font-size: 11px;}
+.sh {display: none;}
+.dn {display: none;}
+.mt-top {margin-top: -130px !important;}
+.fs1 {font-size: 18px;}
+.menu-top {text-align: right;}
+
+
+/*画面幅1300px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:1200px){
+
+/*全体の幅を一括設定
+---------------------------------------------------------------------------*/
+header,#menubar,.contents,#pagetop {
+	margin: 0 3%;
+}
+
+}
+
+
+
+/*画面幅800px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:800px){
+
+
+/*コンテンツ
+---------------------------------------------------------------------------*/
+/*見出しのタイプ違い設定（トップページの挨拶で使っている大きな見出し）*/
+.type1 {
+	font-size: 40px !important;
+}
+
+/*main,subコンテンツ
+---------------------------------------------------------------------------*/
+.main, .sub {
+	float: none;
+	width: auto;
+}
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+section#new h2.open {
+	background: #dd6e02 url(../images/btn_minus.png) no-repeat right center/34px 34px;
+}
+section#new h2.close {
+	background: #dd6e02 url(../images/btn_plus.png) no-repeat right center/34px 34px;
+}
+
+/*テーブル ta2
+---------------------------------------------------------------------------*/
+/*ta2設定*/
+.ta2 {
+	font-size: 14px;
+}
+/*一番左の列の設定。メニュータイトルが入っている所。*/
+.ta2 th {
+	width: 140px;	/*幅*/
+}
+/*写真用*/
+.ta2 img.menu-img {
+	width: 100px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+body.s-n .sub {display: none;}
+.pt70 {padding-top: 0px;}
+
+}
+
+
+
+/*画面幅600px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:600px){
+
+/*ヘッダー（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+header {
+	text-align: left;	/*内容を左寄せに変更*/
+}
+/*ロゴ画像*/
+#logo img {
+	width: 220px;	/*画像幅*/
+	padding-top: 38px;	/*画像の上にあける余白*/
+}
+
+/*GALLERYページ
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list {
+	width: 30%;	/*ボックスの幅*/
+}
+
+/*COUPONページ
+---------------------------------------------------------------------------*/
+/*段落タグ*/
+#coupon p {
+	left: 0%;
+	width: 90%;
+}
+
+/*テーブル
+---------------------------------------------------------------------------*/
+/*テーブル内の左側*/
+.ta1 th {
+	width: 90px;
+	padding: 5px;
+}
+/*テーブル内の右側*/
+.ta1 td {
+	width: auto;
+	padding: 5px;
+}
+
+/*テーブル ta2
+---------------------------------------------------------------------------*/
+/*写真用*/
+.ta2 img.menu-img {
+	float: none;
+	display: block;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.ws,.wl {width: 95%;}
+.fr,.fl {float: none;margin: 0;margin-bottom: 10px;width: 100%;}
+.sh {display: block;}
+.pc {display: none;}
+
+}
+
+
+/*画面幅480px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px){
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	font-size: 12px;	/*文字サイズ*/
+	line-height: 1.6;	/*行間*/
+}
+
+/*トップページ以外のメイン画像。
+#subimgのcss設定はここのみです。あまりに画像が細長くなるので、一旦幅を200%にして中央のみ切り抜いています。
+細長いまま全体を出したいならここのブロック全部削除して下さい。
+---------------------------------------------------------------------------*/
+#subimg {
+	width: 200%;
+	position: relative;
+	left: -50%;
+}
+
+/*コンテンツ
+---------------------------------------------------------------------------*/
+.contents {
+	padding: 10px 0;
+}
+/*見出しのタイプ違い設定（トップページの挨拶で使っている大きな見出し）*/
+.type1 {
+	font-size: 20px !important;
+}
+
+/*サブコンテンツ内のメニュー
+---------------------------------------------------------------------------*/
+/*メニュー１個ごとの設定*/
+.sub ul.submenu li a {
+	padding: 10px;	/*メニュー内の余白*/
+}
+
+/*GALLERYページ
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list {
+	width: 47%;	/*ボックスの幅*/
+}
+
+/*テーブル ta2
+---------------------------------------------------------------------------*/
+.ta2 td,
+.ta2 th {
+	padding: 3px;	/*ボックス内の余白*/
+}
+/*一番左の列の設定。メニュータイトルが入っている所。*/
+.ta2 th {
+	width: 100px;
+}
+
+/*MENUページのページ内メニュー
+---------------------------------------------------------------------------*/
+ul.navmenu {
+	padding-top: 0px;
+	padding-bottom: 20px;
+	text-align: left;
+}
+ul.navmenu li {
+	display: block;
+	padding: 10px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.fs1 {font-size: 14px;}
+
+}
