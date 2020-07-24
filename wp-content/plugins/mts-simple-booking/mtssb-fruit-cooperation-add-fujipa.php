@@ -4,7 +4,7 @@
 
 
         /**
-         * ログ出力 処理を開始  20200719 kazuya.okamoto add GitHub TEST コメント追記しました。
+         * ログ出力 処理を開始  20200724 kazuya.okamoto add GitHub TEST コメント修正しました。
          * 
          */
 
